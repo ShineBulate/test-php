@@ -16,7 +16,7 @@ class User{
 		$this->password = md5($_POST['user_pass']);
 		$this->re_password = md5($_POST['re_pass']);
 		if($this->password != $this->re_password){
-			echo("<a href='http://localhost/index.php'>Назад</a>");
+			echo("<a href='http://localhost/index.php'>РќР°Р·Р°Рґ</a>");
 			echo("<script>alert('Error password!')</script>");	
 				
 			
@@ -64,9 +64,9 @@ if ($db->connect_errno)
 }
 		$sql = "INSERT INTO `user` (`login`,`email`,`name`,`password`) VALUES ('$this->login','$this->e_mail','$this->name','$this->password')";
 		if($db->query($sql)){
-    echo "Вы успешно зарегистрированы!";
+    echo "Р’С‹ СѓСЃРїРµС€РЅРѕ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹!";
 } else{
-    echo "Ошибка: " . $db->error;
+    echo "ГЋГёГЁГЎГЄГ : " . $db->error;
 }
 $db->close();
 	}
