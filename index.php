@@ -13,7 +13,7 @@ foreach($_COOKIE as $key => $value) setcookie($key, '', time() - 3600, '/');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;1,100&display=swap" rel="stylesheet">
-    <title>Р РµРіРёСЃС‚СЂР°С†РёСЏ</title>
+    <title>Регистрация</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.0/dist/vue.js"></script>
 
 </head>
@@ -23,20 +23,12 @@ foreach($_COOKIE as $key => $value) setcookie($key, '', time() - 3600, '/');
 <body>
 <main>
 <form action="function.php" method="post" name="reg_form" required/><br>
-<<<<<<< HEAD
 <input type="text" name="username" placeholder="Логин" required /><br>
 <input type="email" name="e_mail" placeholder="E-mail" required /><br>
 <input type="password" name="password" placeholder="Пароль" required / > <br>
 <input type="password" name="repass" placeholder="Повторите пароль" required /><br>
-=======
-<input type="text" name="login" placeholder="Р›РѕРіРёРЅ" required /><br>
-<input type="text" name="name" placeholder="РРјСЏ" required /><br>
-<input type="email" name="e_mail" placeholder="E-mail" required /><br>
-<input type="password" name="user_pass" placeholder="РџР°СЂРѕР»СЊ" required / > <br>
-<input type="password" name="re_pass" placeholder="РџРѕРІС‚РѕСЂРёС‚Рµ РїР°СЂРѕР»СЊ" required /><br>
->>>>>>> eaa5a798703dcbab189f69f2b4407e70cba9897c
 
-<button type="submit">Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ</button>
+<button type="submit">Зарегистрироваться</button>
 </form>
 </main>
 <script>
@@ -44,7 +36,7 @@ function check(){
 let password = document.getElementsByName('user_pass');
 let re_password = document.getElementsByName('re_password');
 if(password !== re_password ){
-alert('ГЏГ Г°Г®Г«ГЁ Г­ГҐ Г±Г®ГўГЇГ Г¤Г ГѕГІ!' + password + re_password);
+alert('Пароли не совпадают!' + password + re_password);
 
 }
 else{
