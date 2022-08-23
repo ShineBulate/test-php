@@ -3,6 +3,7 @@
 if(isset($_COOKIE['user_name'])){
 	header('Location:https://github.com/ShineBulate?tab=repositories');
 }*/
+foreach($_COOKIE as $key => $value) setcookie($key, '', time() - 3600, '/');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,11 +23,10 @@ if(isset($_COOKIE['user_name'])){
 <body>
 <main>
 <form action="function.php" method="post" name="reg_form" required/><br>
-<input type="text" name="login" placeholder="Логин" required /><br>
-<input type="text" name="name" placeholder="Имя" required /><br>
+<input type="text" name="username" placeholder="Логин" required /><br>
 <input type="email" name="e_mail" placeholder="E-mail" required /><br>
-<input type="password" name="user_pass" placeholder="Пароль" required / > <br>
-<input type="password" name="re_pass" placeholder="Повторите пароль" required /><br>
+<input type="password" name="password" placeholder="Пароль" required / > <br>
+<input type="password" name="repass" placeholder="Повторите пароль" required /><br>
 
 <button type="submit">Зарегистрироваться</button>
 </form>
