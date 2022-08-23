@@ -27,7 +27,7 @@ Class Users{
 }
 Class DB extends Users{
 	public function __construct(){
-	$connect= new mysqli('localhost','root','','profiles');
+	$connect= new mysqli('localhost','root','rootroot','profiles');
 	if($connect->connect_error){
 		die('Connection error'.$connect->connect_errno);
 	}
@@ -48,8 +48,8 @@ Class DB extends Users{
 	
 	public function check(){
 		if($this->password != $this->repass){
-			echo("<a href='http://localhost/index.php'>Назад</a><br> ");
-			exit("Пароли не совпадают!");
+			echo("<a href='http://localhost/index.php'>РќР°Р·Р°Рґ</a><br> ");
+			exit("РќРµРІРµСЂРЅРѕ РїРѕРІС‚РѕСЂРёР»Рё РїР°СЂРѕР»СЊ!");
 			
 		}
 	}
