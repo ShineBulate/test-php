@@ -22,10 +22,10 @@ foreach($_COOKIE as $key => $value) setcookie($key, '', time() - 3600, '/');
 </header>
 <body>
 <main>
-<form action="function.php" method="post" name="reg_form" required/><br>
+<form action="function.php" method="post" name="reg_form"><br>
 <input type="text" name="username" placeholder="Логин" required /><br>
 <input type="email" name="e_mail" placeholder="E-mail" required /><br>
-<input type="password" name="password" placeholder="Пароль" required / > <br>
+<input type="password" name="password" placeholder="Пароль" required /> <br>
 <input type="password" name="repass" placeholder="Повторите пароль" required /><br>
 
 <button type="submit">Зарегистрироваться</button>

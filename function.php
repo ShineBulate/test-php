@@ -5,46 +5,44 @@ Class Users{
 	protected $e_mail;
 	protected $password;
 	protected $repass;
-	
 	protected $login;
 	protected $passIn;
 	
-	public function __construct(){
+	public function getInfo(){
 		$this->username = $_POST['username'];
 		$this->email = $_POST['e_mail'];
-		$this->password = md5($_POST['password']);
-		$this->repass = md5($_POST['repass']);
+		$this->password = md5(($_POST['password']));
+		$this->repass = md5(($_POST['repass']));
 		
 	}
-	public function logIn(){
-		$this->login = $_POST['login'];
-		$this->passin = $_POST['passin'];
-	
-	}
+
+
+
 	
 	
 	
 }
 Class DB extends Users{
+	protected $connect;
 	public function __construct(){
-	$connect= new mysqli('localhost','root','rootroot','profiles');
+	$connect = new mysqli('localhost','root','rootroot','profiles');
 	if($connect->connect_error){
 		die('Connection error'.$connect->connect_errno);
 	}
 	}
 	public function newProfile(){
-		$sql = "INSERT INTO `user` (`username`,`email`,`password`,) VALUES ('$this->username','$this->e_mail','$this->password')";
-		$connect->query($sql);
-		if($connect->query($sql)){
-			echo "You has been reg!";
-			$connect->close();
-		}
-		else{
-			$connect->error();
-			$connect->close();
+		$connect = new mysqli('localhost','root','rootroot','profiles');
+		$sql = "INSERT INTO users (`login`, `email`, `password`)
+		VALUES ('$this->username', '$this->email', '$this->password')";
+		
+		if ($connect->query($sql) === TRUE) {
+			setcookie("success","Вы успешно зарегистрированы!",time() + 1);
+			header('Location:http://php.lc/login.php');
+			exit();
+		} else {
+			echo "Error: " . $sql . "<br>" . $connect->error;
 		}
 	}
-	
 	
 	public function check(){
 		if($this->password != $this->repass){
@@ -55,10 +53,11 @@ Class DB extends Users{
 	}
 }
 $db = new DB();
-$db->check();
+$db->getInfo();
 $db->newProfile();
 $newuser = new Users();
-
+$newuser->getInfo();
+$db->check();
 
 
 ?>
